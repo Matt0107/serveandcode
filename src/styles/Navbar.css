@@ -1,0 +1,157 @@
+/* Style général de la navbar */
+.navbar {
+    display: flex;
+    align-items: center;
+    padding: 10px 20px;
+    background-color: var(--tennis-secondary-color); /* Bleu-vert foncé */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    position: relative; /* Pour centrer les icônes */
+  }
+  
+  /* Logo à gauche */
+  .navbar-logo {
+    flex: 0 0 auto; /* Empêche le logo de prendre plus de place qu'il n'en a besoin */
+  }
+  
+  .navbar-logo img {
+    height: 50px; /* Taille du logo */
+  }
+  
+  /* Icônes de réseaux sociaux au centre */
+  .navbar-socials {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%); /* Centre les icônes exactement au milieu de la navbar */
+    display: flex;
+    gap: 30px; /* Espacement égal entre les icônes */
+  }
+  
+  .navbar-socials a {
+    color: #FFFFFF; /* Toutes les icônes seront blanches */
+    transition: color 0.3s ease; /* Transition pour l'effet hover */
+  }
+  
+  .navbar-socials a:hover {
+    color: var(--tennis-primary-color); /* Changement de couleur au survol */
+  }
+  
+  /* Liens à droite */
+  .navbar-links {
+    display: flex;
+    margin-left: auto; /* Aligne les liens complètement à droite */
+    list-style: none;
+  }
+  
+  .navbar-links li {
+    margin-left: 20px; /* Espacement entre les liens */
+  }
+  
+  .navbar-links a {
+    text-decoration: none;
+    color: var(--tennis-text-color); /* Blanc */
+    font-size: 1rem;
+    transition: color 0.3s ease;
+  }
+  
+  .navbar-links a:hover {
+    color: var(--tennis-primary-color); /* Bleu-vert clair au hover */
+  }
+  
+  /* Bouton "Book" et Burger menu pour le mode responsive */
+  .navbar-right {
+    display: none; /* Masqué en mode desktop */
+  }
+  
+  /* Bouton "Book" */
+  .book-button {
+    background-color: transparent; /* Fond transparent */
+    color: var(--tennis-text-color); /* Blanc */
+    padding: 8px 16px;
+    border: 2px solid var(--tennis-text-color); /* Bordure blanche */
+    border-radius: 5px;
+    font-size: 1.2rem; /* Police plus grande et plus lisible */
+    font-weight: 600; /* Police plus épaisse */
+    cursor: pointer;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    margin-right: 15px; /* Espacement avec le burger menu */
+  }
+  
+  .book-button:hover {
+    background-color: var(--tennis-text-color); /* Fond blanc au hover */
+    color: var(--tennis-secondary-color); /* Texte bleu-vert foncé au hover */
+  }
+  
+  /* Icône du burger menu, masqué par défaut */
+  .burger-icon {
+    display: none; /* Cacher le burger en mode desktop */
+    font-size: 24px;
+    color: #FFFFFF; /* Blanc pour l'icône */
+    cursor: pointer;
+  }
+  
+  /* Slide menu pour responsive */
+  .slide-menu {
+    position: fixed;
+    top: 0;
+    right: -100%; /* Masqué par défaut */
+    width: 100%;
+    height: 100%;
+    background-image: url('../assets/images/tennis-home.png'); /* Image de fond */
+    background-size: cover;
+    background-position: center;
+    transition: right 0.3s ease; /* Transition fluide */
+    z-index: 99; /* Sous la navbar */
+  }
+  
+  .slide-menu.open {
+    right: 0; /* Affiche le menu quand ouvert */
+  }
+  
+  .slide-menu-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100%; /* Le menu occupe toute la hauteur */
+    background: rgba(0, 0, 0, 0.6); /* Superposition sombre pour la lisibilité */
+  }
+  
+  .slide-menu-content a {
+    color: var(--tennis-text-color); /* Blanc */
+    font-size: 2rem;
+    margin-bottom: 20px; /* Espacement entre les liens */
+    text-decoration: none;
+    transition: color 0.3s ease;
+  }
+  
+  .slide-menu-content a:hover {
+    color: var(--tennis-primary-color); /* Changement de couleur au hover */
+  }
+  
+  /* *** Responsive pour petits écrans *** */
+  @media (max-width: 768px) {
+    /* Cache les icônes sociales en responsive */
+    .navbar-socials {
+      display: none;
+    }
+  
+    /* Afficher le burger menu et bouton "Book" en responsive */
+    .navbar-right {
+      display: flex;
+      margin-left: auto; /* Pousse le burger et "Book" à droite */
+    }
+  
+    .burger-icon {
+      display: block; /* Affiche le burger */
+    }
+  
+    .book-button {
+      display: block;
+    }
+  
+    /* Cacher les liens classiques en mode responsive */
+    .navbar-links {
+      display: none;
+    }
+  }
+  

@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import NavbarServe from '../components/NavbarServe'; // Importation de la NavbarServe
 import '../styles/ServePage.css'; // Styles spécifiques à ServePage
 
 const testimonials = [
@@ -31,10 +32,11 @@ const ServePage = () => {
     return () => clearInterval(interval);
   }, []);
 
-
   return (
     <div className="serve-page">
-      
+      {/* Ajout de la barre de navigation */}
+      <NavbarServe />
+
       {/* Section de fond (2/3 de la page) */}
       <div className="serve-background">
         <h1>Improve Your Tennis Skills</h1>
@@ -46,11 +48,11 @@ const ServePage = () => {
           <h2>Our Offer</h2>
           <p>Check out our exclusive tennis programs and coaching packages.</p>
           <a href="https://www.example.com" target="_blank" rel="noopener noreferrer">
-          <button className="cta-button">See More</button>
+            <button className="cta-button">See More</button>
           </a>
         </div>
         <div className="detail-item">
-        <h2>Testimonials</h2>
+          <h2>Testimonials</h2>
           <div className="testimonial-carousel">
             <div className={`testimonial-content ${transitionClass}`}>
               <p>"{testimonials[currentTestimonial].text}"</p>
@@ -62,7 +64,7 @@ const ServePage = () => {
           <h2>Book Your Class</h2>
           <p>Ready to take your tennis to the next level? Book a class now!</p>
           <a href="https://calendly.com/afrotennis/60min" target="_blank" rel="noopener noreferrer">
-          <button className="cta-button">Book Now</button>
+            <button className="cta-button">Book Now</button>
           </a>
         </div>
       </div>
