@@ -1,0 +1,148 @@
+/* Couleurs de la charte */
+:root {
+    --tennis-primary-color: #A6D2C3; /* Bleu-vert clair */
+    --tennis-secondary-color: #003F3F; /* Bleu-vert foncé */
+    --tennis-accent-color: #F0F3F1; /* Gris clair */
+    --tennis-text-color: #FFFFFF; /* Blanc pour le texte */
+  }
+  
+  /* Section de fond (2/3 de la page) */
+  .serve-background {
+    height: 66vh; /* 2/3 de la hauteur de la page */
+    background-image: url('../assets/images/background-test.jpg'); /* Remplace par l'image */
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+  }
+  
+  .serve-background::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.3); /* Superposition pour améliorer la lisibilité */
+  }
+  
+  .serve-background h1 {
+    position: relative;
+    color: var(--tennis-text-color);
+    font-size: 3rem;
+    z-index: 1; /* Assure que le texte soit par-dessus la superposition */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7); /* Ombre pour le texte */
+  }
+  
+  /* Deuxième section (1/3 de la page) avec 3 parties */
+  .serve-details {
+    height: 33vh; /* 1/3 de la hauteur de la page */
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 20px;
+    background-color: var(--tennis-accent-color); /* Fond gris clair */
+  }
+  
+  .serve-details .detail-item {
+    flex: 1;
+    margin: 0 10px;
+    padding: 20px;
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    height: 200px; /* Fixe la hauteur des items */
+  }
+  
+  .serve-details h2 {
+    font-size: 1.5rem;
+    margin-bottom: 15px;
+    color: var(--tennis-secondary-color); /* Bleu-vert foncé pour les titres */
+  }
+  
+  .serve-details p {
+    font-size: 1rem;
+    margin-bottom: 20px;
+    color: #555; /* Gris pour le texte descriptif */
+  }
+  
+  /* Boutons dans la section */
+  .serve-details .cta-button {
+    padding: 10px 20px;
+    background-color: var(--tennis-secondary-color); /* Bouton avec bleu-vert foncé */
+    color: var(--tennis-text-color);
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .serve-details .cta-button:hover {
+    background-color: var(--tennis-primary-color); /* Change de couleur au hover */
+  }
+  
+  /* Carrousel des témoignages */
+  .testimonial-carousel {
+    width: 100%;
+    height: 150px; /* Hauteur fixe pour éviter que la case ne change de taille */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    overflow: hidden;
+  }
+  
+  .testimonial-content {
+    transition: opacity 0.5s ease-in-out; /* Transition fluide entre les témoignages */
+    opacity: 1; /* Par défaut */
+    max-width: 90%;
+    color: var(--tennis-secondary-color); /* Texte en bleu-vert foncé */
+  }
+  
+  .testimonial-content p {
+    margin: 0;
+    font-size: 1rem;
+    line-height: 1.5;
+    color: var(--tennis-secondary-color);
+  }
+  
+  /* Boutons de navigation du carrousel */
+  .carousel-btn {
+    background-color: var(--tennis-secondary-color);
+    color: white;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    font-size: 1.2rem;
+    transition: background-color 0.3s ease;
+  }
+  
+  .carousel-btn:hover {
+    background-color: var(--tennis-primary-color);
+  }
+  
+  /* *** Responsive *** */
+  @media (max-width: 768px) {
+    .serve-background h1 {
+      font-size: 2.5rem;
+    }
+  
+    .serve-details {
+      flex-direction: column; /* Empiler les éléments verticalement sur petits écrans */
+    }
+  
+    .serve-details .detail-item {
+      width: 100%; /* Les détails prennent toute la largeur sur petit écran */
+      margin: 10px 0;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .serve-background h1 {
+      font-size: 2rem;
+    }
+  }
+  
