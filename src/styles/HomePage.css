@@ -1,84 +1,80 @@
 /* Conteneur principal */
 .home-container {
-    display: flex;
-    height: 100vh;
-    width: 100%;
-    transition: all 0.5s ease;
+  display: flex;
+  height: 100vh;
+  width: 100%;
+  transition: all 0.5s ease;
+}
+
+.home-section {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: filter 0.5s ease, transform 0.5s ease;
+  background-size: cover;
+  background-position: center;
+  color: white;
+  font-size: 3rem;
+  font-weight: bold;
+  position: relative;
+  text-decoration: none; /* Supprime le soulignement */
+}
+
+.home-section h1 {
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6);
+  text-decoration: none; /* Supprime aussi le soulignement sur le texte */
+}
+
+/* Image Tennis à gauche */
+.serve-section {
+  background-image: url('../assets/images/prestige.jpg');
+}
+
+/* Image Tech à droite */
+.code-section {
+  background-image: url('../assets/images/tech-home.png');
+}
+
+/* Applique un filtre sur la section non survolée */
+.home-container.hover-serve .code-section,
+.home-container.hover-code .serve-section {
+  filter: grayscale(50%) blur(2px); /* Mise en noir et blanc partiel et léger flou */
+}
+
+.home-container.hover-serve .serve-section,
+.home-container.hover-code .code-section {
+  filter: none; /* Pas de filtre sur la section survolée */
+}
+
+/* *** Responsive pour les écrans de moins de 768px de large (tablettes et smartphones) *** */
+@media (max-width: 768px) {
+  .home-container {
+    flex-direction: column; /* Les sections sont empilées */
   }
-  
+
   .home-section {
-    flex: 1;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    transition: flex 0.5s ease;
-    background-size: cover;
-    background-position: center;
-    color: white;
-    font-size: 3rem;
-    font-weight: bold;
-    position: relative;
-    text-decoration: none; /* Supprime le soulignement */
+    height: 50vh; /* Chaque section prend 50% de la hauteur de l'écran */
+    font-size: 2rem; /* Réduction de la taille de la police */
   }
-  
-  .home-section h1 {
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6);
-    text-decoration: none; /* Supprime aussi le soulignement sur le texte */
-  }
-  
-  /* Image Tennis à gauche */
-  .serve-section {
-    background-image: url('../assets/images/tennis-home.png');
-  }
-  
-  /* Image Tech à droite */
-  .code-section {
-    background-image: url('../assets/images/tech-home.png');
-  }
-  
-  /* Agrandissement au hover */
-  .home-container.hover-serve .serve-section {
-    flex: 1.1;
-  }
-  
+
+  /* En mobile, il n'y a pas de hover, donc les sections gardent la même taille */
+  .home-container.hover-serve .serve-section,
   .home-container.hover-code .code-section {
-    flex: 1.1;
+    flex: 1;
   }
-  
-  .home-container.hover-serve .code-section,
-  .home-container.hover-code .serve-section {
-    flex: 0.9;
+
+  /* Le texte reste centré et lisible */
+  .home-section h1 {
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+    text-decoration: none;
   }
-  
-  /* *** Responsive pour les écrans de moins de 768px de large (tablettes et smartphones) *** */
-  @media (max-width: 768px) {
-    .home-container {
-      flex-direction: column; /* Les sections sont empilées */
-    }
-  
-    .home-section {
-      height: 50vh; /* Chaque section prend 50% de la hauteur de l'écran */
-      font-size: 2rem; /* Réduction de la taille de la police */
-    }
-  
-    /* En mobile, il n'y a pas de hover, donc les sections gardent la même taille */
-    .home-container.hover-serve .serve-section,
-    .home-container.hover-code .code-section {
-      flex: 1;
-    }
-  
-    /* Le texte reste centré et lisible */
-    .home-section h1 {
-      text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
-      text-decoration: none;
-    }
+}
+
+/* *** Responsive pour les écrans de moins de 480px de large (petits smartphones) *** */
+@media (max-width: 480px) {
+  .home-section {
+    font-size: 1.5rem; /* Ajuste la taille du texte encore plus sur les très petits écrans */
+    height: 50vh;
   }
-  
-  /* *** Responsive pour les écrans de moins de 480px de large (petits smartphones) *** */
-  @media (max-width: 480px) {
-    .home-section {
-      font-size: 1.5rem; /* Ajuste la taille du texte encore plus sur les très petits écrans */
-      height: 50vh;
-    }
-  }
-  
+}

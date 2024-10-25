@@ -52,6 +52,13 @@ const ServePage = () => {
           </a>
         </div>
         <div className="detail-item">
+          <h2>Book Your Class</h2>
+          <p>Ready to take your tennis to the next level? Book a class now!</p>
+          <a href="https://calendly.com/afrotennis/60min" target="_blank" rel="noopener noreferrer">
+            <button className="cta-button">Book Now</button>
+          </a>
+        </div>
+        <div className="detail-item">
           <h2>Testimonials</h2>
           <div className="testimonial-carousel">
             <div className={`testimonial-content ${transitionClass}`}>
@@ -59,13 +66,6 @@ const ServePage = () => {
               <p>- {testimonials[currentTestimonial].name}</p>
             </div>
           </div>
-        </div>
-        <div className="detail-item">
-          <h2>Book Your Class</h2>
-          <p>Ready to take your tennis to the next level? Book a class now!</p>
-          <a href="https://calendly.com/afrotennis/60min" target="_blank" rel="noopener noreferrer">
-            <button className="cta-button">Book Now</button>
-          </a>
         </div>
       </div>
     </div>

@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom'; // Utilisé pour la navigation entre les pages
-import { FaInstagram, FaTiktok, FaYoutube, FaBars, FaTimes } from 'react-icons/fa'; // Importation des icônes et du burger/croix
-import '../styles/Navbar.css'; // Le même fichier CSS que celui utilisé pour NavbarCode
+import { Link } from 'react-router-dom';
+import { FaInstagram, FaTiktok, FaYoutube, FaBars, FaTimes } from 'react-icons/fa';
+import '../styles/Navbar.css';
 
 const NavbarServe = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -47,7 +47,6 @@ const NavbarServe = () => {
         <a href="https://calendly.com/afrotennis/60min" target="_blank" rel="noopener noreferrer">
           <button className="book-button">Book</button>
         </a>
-        {/* Change between burger menu and cross icon based on the state */}
         {isMenuOpen ? (
           <FaTimes className="burger-icon" onClick={toggleMenu} />
         ) : (
@@ -58,7 +57,7 @@ const NavbarServe = () => {
       {/* Menu burger qui apparaît avec un slide en mode responsive */}
       <div className={`slide-menu ${isMenuOpen ? 'open' : ''}`}>
         <div className="slide-menu-content">
-          <Link to="/offer" onClick={toggleMenu}>Offer</Link>
+          <Link to="/" onClick={toggleMenu}>Home</Link>
           <Link to="/contact" onClick={toggleMenu}>Contact</Link>
         </div>
       </div>
