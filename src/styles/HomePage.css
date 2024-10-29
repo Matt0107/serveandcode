@@ -39,7 +39,7 @@
 /* Applique un filtre sur la section non survolée */
 .home-container.hover-serve .code-section,
 .home-container.hover-code .serve-section {
-  filter: grayscale(50%) blur(2px); /* Mise en noir et blanc partiel et léger flou */
+  filter: grayscale(50%) blur(6px); /* Mise en noir et blanc partiel et léger flou */
 }
 
 .home-container.hover-serve .serve-section,
